@@ -1,5 +1,7 @@
 package io.mosip.certify.service;
 
+import io.mosip.certify.dto.ParsedAccessToken;
+
 public interface TokenService {
-    String getClaimsFromToken(String authorizationHeader) throws Exception;
+    ParsedAccessToken getClaimsFromToken(String authorizationHeader) throws Exception;
 }

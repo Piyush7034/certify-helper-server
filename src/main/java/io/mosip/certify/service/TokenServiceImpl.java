@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.oauth2.core.DelegatingOAuth2TokenValidator;
 import org.springframework.security.oauth2.jwt.*;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.Clock;
 import java.time.Instant;
@@ -15,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
-@Component
+@Service(value = "tokenService")
 @Slf4j
 public class TokenServiceImpl implements TokenService {
     @Value("${mosip.certify.authn.issuer-uri}")
@@ -26,9 +27,6 @@ public class TokenServiceImpl implements TokenService {
 
     @Value("#{${mosip.certify.authn.allowed-audiences}}")
     private List<String> allowedAudiences;
-
-    @Value("#{${mosip.certify.authn.filter-urls}}")
-    private List<String> urlPatterns;
 
     @Autowired
     private ParsedAccessToken parsedAccessToken;
@@ -58,7 +56,7 @@ public class TokenServiceImpl implements TokenService {
     }
 
     @Override
-    public String getClaimsFromToken(String authorizationHeader) throws Exception {
+    public ParsedAccessToken getClaimsFromToken(String authorizationHeader) throws Exception {
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             String token = authorizationHeader.substring(7);
             //validate access token no matter if its JWT or Opaque
@@ -70,7 +68,7 @@ public class TokenServiceImpl implements TokenService {
                     parsedAccessToken.getClaims().putAll(jwt.getClaims());
                     parsedAccessToken.setAccessTokenHash(CommonUtil.generateOIDCAtHash(token));
                     parsedAccessToken.setActive(true);
-                    return "" + parsedAccessToken.getClaims();
+                    return parsedAccessToken;
                 } catch (Exception e) {
                     log.error("Access token validation failed", e);
                 }

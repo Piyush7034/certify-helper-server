@@ -1,3 +1,4 @@
 
+	java:S112 "FDefine and throw a dedicated exception instead of using a generic one.(ì½±¡ÿÿÿÿÿ8¨µıšĞ2J$e289f6e3-3b4d-489f-8b79-7dff8cb78236
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8¯¤éıÏ2J$a19245ea-fb1f-45ba-bb08-116878e919e4
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ªµıšĞ2J$efd2d5af-46fa-4f56-8f6e-345bdb836002
