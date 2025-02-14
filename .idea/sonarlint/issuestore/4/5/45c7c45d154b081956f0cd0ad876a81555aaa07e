@@ -1,0 +1,10 @@
+
+	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(öß¨²ûÿÿÿÿ8ñ‰½ıÏ2J$f3b8664a-5301-4b0a-af26-6e1d1765bed6
+}
+java:S1118":Add a private constructor to hide the implicit public one.(‹¸â¶8‚«²ıÏ2J$8a70a859-ab88-4713-82a6-c9bf520bf3e5
+r
+java:S1068"*Remove this unused "logger" private field.(ª¾²¤ûÿÿÿÿ8§«²ıÏ2J$a2d6c33d-ed04-476d-a793-02e055f93dbc
+w
+java:S1068""/Remove this unused "pathMatcher" private field.(ôû±üÿÿÿÿ8¨«²ıÏ2J$78dd8f27-3548-4c42-8318-b266b8787360
+s
+java:S1068#"0Remove this unused "urlValidator" private field.(³¯ú8©«²ıÏ2J$8ba30b66-2da2-4a71-aca1-8708bd25988b
