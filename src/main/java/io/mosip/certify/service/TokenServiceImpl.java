@@ -33,7 +33,6 @@ public class TokenServiceImpl implements TokenService {
 
     private NimbusJwtDecoder nimbusJwtDecoder;
 
-
     private boolean isJwt(String token) {
         return token.split("\\.").length == 3;
     }

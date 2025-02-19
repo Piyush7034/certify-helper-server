@@ -32,5 +32,4 @@ public class TokenController {
         throw new RuntimeException("AUTH_FAILED");
     }
 
-
 }
